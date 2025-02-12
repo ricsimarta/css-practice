@@ -23,6 +23,21 @@ const getMonstersData = async (array, count) => {
   return Promise.all(fetchArray);
 }
 
+const header = () => `
+  <header>
+    <div class="logo">logo</div>
+
+    <button class="menu"></button>
+    <nav>
+      <button>Home</button>
+      <button>About</button>
+      <button>Contact</button>
+      <button>Kismacska</button>
+      <button>Codecool</button>
+    </nav>
+  </header>
+`
+
 const card = (monsterData, index) => `
   <div class="card">
     <h3>#${index + 1}</h3>
@@ -58,8 +73,13 @@ const loading = () => `
   </div>
 `;
 
+const createMenuButtonClickEvent = () => document.querySelector('button.menu').addEventListener('click', (event) => event.target.classList.toggle('open'));
+
 const init = async () => {
   const rootElement = document.querySelector("#root");
+  rootElement.insertAdjacentHTML('beforeend', header());
+  createMenuButtonClickEvent();
+
   rootElement.insertAdjacentHTML('beforeend', loading());
 
   const { results } = await fetchData('/api/monsters');
