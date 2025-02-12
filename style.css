@@ -15,13 +15,57 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-
-  /* position: relative; */
 }
 
 header {
   position: fixed;
 }
+
+div.loading-container {
+  position: relative;
+}
+
+div.loading-container h2 {
+  margin-top: 50px;
+}
+
+div.loading, div.loading-2 {
+  width: 50px;
+  height: 50px;
+  animation: rotate 1s ease-in-out infinite;
+}
+
+div.loading {
+  position: relative;
+}
+
+div.loading-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  animation-delay: 0.15s;
+}
+
+div.circle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  background-color: rgba(146, 216, 148, 0.391);
+}
+
+div.loading-2 div.circle {
+  background-color: rgba(245, 216, 168, 0.391);
+}
+
+div.circle:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 
 div.card {
   display: flex;
@@ -30,13 +74,17 @@ div.card {
   border: 5px solid black;
   border-radius: 40px;
   max-width: 500px;
+  width: 100%;
   padding: 20px;
   position: relative;
 
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+  transform: scale(0.8);
+
+  transition: all 0.3s ease;
+}
+
+div.card:hover {
+  transform: scale(0.9);
 }
 
 div.card > h3 {
@@ -56,7 +104,6 @@ div.card > h2 {
   padding: 0 30px;
 
   text-align: center;
-  /* border-bottom: 2px solid black; */
 }
 
 div.card > h2::after {
@@ -127,10 +174,12 @@ div.stats > span::before {
   font-size: 16px;
 }
 
-/* div.stats > span:nth-child(2n + 1)::before {
-  top: -20px;
-}
+@keyframes rotate {
+  0% { 
+    transform: rotate(0);
+  }
 
-div.stats > span:nth-child(2n)::before {
-  bottom: -20px;
-} */
+  100% {
+    transform: rotate(360deg);
+  }
+}
