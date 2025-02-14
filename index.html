@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,78 @@
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <header>
+      <div class="content">
+        <nav>
+          <div class="logo"></div>
+          <button>learn</button>
+          <button>students</button>
+          <button>student overview</button>
+          <button>feedback</button>
+          <button>teams</button>
+          <button>attendance</button>
+        </nav>
+
+        <div class="account">
+          <button>edit curriculum</button>
+          <button>S</button>
+          <button>A</button>
+          <div class="menu"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="question">
+        <div class="header">
+          <h2>todays question</h2>
+
+          <div class="buttons">
+            <button>L</button>
+            <span class="counter">13</span>
+            <button>D</button>
+            <button class="add">add question</button>
+          </div>
+        </div>
+
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, laboriosam? Voluptatem aut ad quo optio
+          repellat labore totam exercitationem cum doloremque necessitatibus repellendus quasi est asperiores nisi
+          officia, ducimus quidem?
+        </p>
+      </div>
+
+      <div class="students">
+        <div class="header">
+          <div class="title">
+            <h2>students of kismacska</h2>
+
+            <div class="buttons">
+              <button>sort students by name</button>
+              <button>sort students by start</button>
+            </div>
+          </div>
+
+          <div class="date">
+            <input type="date">
+            <button>time travel</button>
+          </div>
+        </div>
+
+        <div class="list"></div>
+      </div>
+    </main>
+  </div>
 </body>
+
 </html>

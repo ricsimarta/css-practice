@@ -1,334 +1,115 @@
 * {
   margin: 0;
   padding: 0;
-  font-size: inherit;
   box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  border: 0;
+  background-color: unset;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: "Archivo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 #root {
-  padding: 80px 20px 20px;
-
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
-
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+}
+header div.content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
-  width: 100%;
-  height: 80px;
-
-  padding: 0 40px;
-
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  
-  background-color: cornsilk;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
-div.logo {
-  width: 100px;
-  height: 60px;
-
-  border: 2px solid black;
-}
-
-nav {
+header div.content nav {
   display: flex;
-  gap: 40px;
+  gap: 10px;
 }
-
-button.menu {
-  display: none;
+header div.content nav div.logo {
+  width: 80px;
+  height: 40px;
+  border: 1px solid #000000;
 }
-
-header button:not(.menu) {
-  position: relative;
-  
-  border: 0;
-  background-color: unset;
-  
-  font-size: 24px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  
-  cursor: pointer;
+header div.content div.account {
+  display: flex;
+  gap: 10px;
 }
-
-header button:not(.menu)::after {
-  content: "";
-  
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  height: 100%;
-  width: 0%;
-
-  border-bottom: 2px solid black;
-
-  transition: all 0.3s ease;
-}
-
-header button:not(.menu):hover::after {
-  width: calc(100% + 10px);
-}
-
-div.loading-container {
-  position: relative;
-}
-
-div.loading-container h2 {
-  margin-top: 50px;
-}
-
-div.loading, div.loading-2 {
-  width: 50px;
-  height: 50px;
-  animation: rotate 1s ease-in-out infinite;
-}
-
-div.loading {
-  position: relative;
-}
-
-div.loading-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  animation-delay: 0.15s;
-}
-
-div.circle {
-  width: 20px;
-  height: 20px;
+header div.content div.account div.menu {
+  width: 60px;
+  height: 40px;
   border: 1px solid black;
-  border-radius: 50%;
-
-  background-color: rgba(146, 216, 148, 0.391);
 }
 
-div.loading-2 div.circle {
-  background-color: rgba(245, 216, 168, 0.391);
-}
-
-div.circle:nth-child(2) {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-
-div.card {
+main {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border: 5px solid black;
-  border-radius: 40px;
-  max-width: 500px;
-  width: 100%;
+  margin-top: 120px;
+}
+main div.question {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   padding: 20px;
-  position: relative;
-
-  transform: scale(0.8);
-
-  transition: all 0.3s ease;
+  background-color: #ffffff;
 }
-
-div.card:hover {
-  transform: scale(0.9);
+main div.question div.header {
+  display: flex;
+  justify-content: space-between;
 }
-
-div.card > h3 {
-  position: absolute;
-  top: 27px;
-  left: 20px;
-
-  font-size: 24px;
+main div.question div.header h2 {
+  font-size: 32px;
 }
-
-div.card > h2 {
-  font-size: 36px;
-  position: relative;
-  margin-bottom: 20px;
-  min-height: 80px;
-
-  padding: 0 30px;
-
+main div.question p {
   text-align: center;
+  font-size: 40px;
 }
-
-div.card > h2::after {
-  content: "";
-
-  display: block;
-
-  width: calc(100% + 40px);
-  height: 100%;
-
-  position: absolute;
-  top: 17px;
-  left: -20px;
-
-  border-bottom: 3px solid black;
-
-  pointer-events: none;
-}
-
-div.card > img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border: 2px solid black;
-}
-
-div.card > p {
-  font-style: italic;
-
+main div.students {
+  background-color: #ffffff;
+  height: 6000px;
   padding: 20px;
-
-  min-height: 50px;
-  background-color: rgba(0, 0, 0, 0.1);
 }
-
-div.stats {
+main div.students div.header {
   display: flex;
-  justify-content: space-evenly;
-  margin: 20px 0 0;
+  justify-content: space-between;
 }
-
-div.stats > span {
-  border: 2px solid black;
-
-  width: 60px;
-  aspect-ratio: 1;
-
+main div.students div.header div.title {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 50%;
-
-  font-size: 24px;
-
-  position: relative;
+  flex-direction: column;
+  gap: 8px;
 }
-
-div.stats > span::before {
-  content: attr(stat-name);
-
-  position: absolute;
-
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  
-  font-size: 16px;
+main div.students div.header div.title h2 {
+  font-size: 32px;
 }
-
-@keyframes rotate {
-  0% { 
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+main div.students div.header div.title div.buttons {
+  display: flex;
+  gap: 10px;
 }
-
-@media screen and (max-width: 1024px) {
-  button.menu {
-    display: block;
-
-    border-top: 2px solid black;
-
-    width: 30px;
-
-    position: relative;
-
-    transition: all 0.15s ease;
-  }
-
-  button.menu::before {
-    content: "";
-
-    position: absolute;
-
-    top: -10px;
-    left: -2px;
-
-    width: 26px;
-
-    border: 2px solid black;
-
-    transition: all 0.3s ease;
-  }
-
-  button.menu::after {
-    content: "";
-
-    position: absolute;
-
-    bottom: -10px;
-    left: -2px;
-
-    width: 26px;
-
-    border: 2px solid black;
-
-    transition: all 0.3s ease;
-  }
-
-  button.menu.open {
-    border-color: transparent;
-  }
-
-  button.menu.open::before {
-    left: -2px;
-    top: -2px;
-    transform: rotate(45deg);
-  }
-
-  button.menu.open::after {
-    left: -2px;
-    bottom: -2px;
-    transform: rotate(-45deg);
-  }
-
-  nav {
-    position: fixed;
-    align-items: center;
-
-    top: 79px;
-    right: 0;
-
-    padding: 20px 40px;
-
-    flex-direction: column;
-
-    transform: translateX(100%);
-
-    border: 1px solid black;
-
-    transition: all 0.3s ease;
-
-    background-color: #fff;
-  }
-
-  button.menu.open ~ nav{
-    transform: translateX(0);
-  }
+main div.students div.header div.title div.buttons button {
+  border: 2px solid rgb(40, 167, 69);
+  border-radius: 4px;
+  color: rgb(40, 167, 69);
+  padding: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+main div.students div.header div.title div.buttons button:hover {
+  background-color: rgb(40, 167, 69);
+  color: #ffffff;
+}/*# sourceMappingURL=style.css.map */
